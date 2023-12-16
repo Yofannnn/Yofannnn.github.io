@@ -15,11 +15,10 @@ menuToggle.addEventListener('click' , function() {
     bodyDropdown.classList.remove('show')
 });
 //dropdown-contact
-const contackClick = document.getElementsByTagName('li')[3];
+const contackClick = document.querySelector('nav ul li p');
 const bodyDropdown = document.querySelector('.dropdown');
 contackClick.addEventListener('click' , function(e) {
     bodyDropdown.classList.toggle('show');
-    e.preventDefault();
 });
 
 // parallax
@@ -33,9 +32,9 @@ window.addEventListener('scroll' , function() {
 });
 
 
-//dom traversal
+//dom traversal  -->  close button menu
 const h3 = document.querySelectorAll('h3');
-const exit = document.querySelectorAll('.close');
+const exit = document.querySelectorAll('.button');
 // for(let i = 0; i < h3.length; i++){
 //     h3[i].addEventListener('click', function() {
 //         h3[i].nextElementSibling.classList.add('show');
@@ -44,14 +43,15 @@ const exit = document.querySelectorAll('.close');
 h3.forEach(function(el) {
     el.addEventListener('click', function(e) {
         e.target.nextElementSibling.classList.add('show');
+        // e.target.nextElementSibling.innerHTML = '<button class="button"><span></span><span></span></button>'
     });
 });
 exit.forEach(function(el) {
     el.addEventListener('click', function(e) {
+        e.target.parentElement.classList.remove('show');
         e.target.parentElement.parentElement.classList.remove('show');
     });
 });
-
 
 
 //alert(comingsoon)show

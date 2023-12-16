@@ -31,7 +31,7 @@ window.addEventListener('scroll' , function() {
     let value = window.scrollY;
     header.style.top = value*0.4 + 'px';
     h1.style.top = value*0.5 + 'px';
-    imgScroll.style.top = value*0.6 + 'px';
+    // imgScroll.style.top = value*8 + 'px';
 });
 
 

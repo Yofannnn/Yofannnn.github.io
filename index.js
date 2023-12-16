@@ -15,11 +15,10 @@ menuToggle.addEventListener('click' , function() {
     bodyDropdown.classList.remove('show')
 });
 //dropdown-contact
-const contackClick = document.getElementsByTagName('li')[3];
+const contackClick = document.querySelector('nav ul li p');
 const bodyDropdown = document.querySelector('.dropdown');
 contackClick.addEventListener('click' , function(e) {
     bodyDropdown.classList.toggle('show');
-    e.preventDefault();
 });
 
 //parallax
@@ -28,8 +27,8 @@ const bgImg= document.querySelector('.bgimg');
 // const nav = document.querySelector('nav');
 window.addEventListener('scroll' , function() {
     let value = window.scrollY;
-    bgImg.style.bottom = value*.4 + 'px';
-    bg.style.top = value*0.6 + 'px';
+    bgImg.style.top = value*.2 + 'px';
+    bg.style.top = value*0.1 + 'px';
     // nav.style.top = value*.8 + 'px';
     // parallaxLandingElement
 });
