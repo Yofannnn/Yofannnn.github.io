@@ -643,10 +643,14 @@ h4.copyright a{
 		flex-wrap: wrap;
 		flex-direction: column;
 		align-items: end;
+		min-height: 110vh;
 	}
 	footer .connect , footer .address , footer .form{
 		width: 90vw;
 		min-height: 30vh;
+	}
+	footer .form{
+		margin-bottom: 10vh;
 	}
 	footer div h3{
 		font-size: 35px;
