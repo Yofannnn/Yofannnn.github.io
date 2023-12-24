@@ -205,9 +205,7 @@ header .container-text h1{
 }
 header .container-text h4{
     font-size: 20px;
-}
-header .container-text p{
-    width: 40%;
+    width: 90%;
 }
 header .container-pict{
     width: 45%;
@@ -225,7 +223,7 @@ header .container-pict .box-shadow{
 header .container-pict .box-shadow .img{
     width: 170px;
     height: 170px;
-    background: url('../../../../Pictures/Screenshots/76bdb467b8944d31807eba3cf5eae1cb~tplv-photomode-image.jpeg.jpg');
+    background: url('../../../Pictures/Screenshots/FB_IMG_1694003114144.jpg');
     background-size: cover;
     transform: translate(-20px , -20px);
 }
@@ -233,11 +231,11 @@ header .container-pict .box-shadow .img{
 article{
     width: 100%;
     height: 100vh;
-    background-color: var(--color4);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--color4);
 }
 article#about .container{
     width: 80%;
@@ -260,16 +258,37 @@ article#about .container .content p{
 }
 article#about .container .svg{
     width: 49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+article#about .container .svg a{
+    position: absolute;
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all .5s;
+}
+article#about .container .svg:hover a{
+    transform: translateY(-100%);
+    opacity: 1;
+}
+article#about .container .svg a:hover{
+    text-decoration: underline;
 }
 article#about .container .svg.one img{
-    width: 60%;
-    position: relative;
-    transform: translate(7vw , -10vh);
+    width: 55%;
 }
 article#about .container .svg.two img{
-    width: 60%;
-    position: relative;
-    transform: translate(7vw , -10vh);
+    width: 50%;
 }
 /* section */
 section#experience{
@@ -280,7 +299,7 @@ section#experience{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: var(--color2);
+    background-color: var(--color4);
 }
 section#experience .content{
     width: 40%;
@@ -295,17 +314,33 @@ section#experience .content p{
 }
 section#experience .svg{
     width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 section#experience .svg img{
     width: 90%;
 }
 section#experience .svg a{
-    /* position: relative; */
+    position: absolute;
     display: inline-block;
     width: 300px;
     height: 40px;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all .5s;
+}
+section#experience .svg:hover a{
+    transform: translateY(-100%);
+    opacity: 1;
+}
+section#experience .svg a:hover{
+    text-decoration: underline;
 }
 /* portfolio */
 section#portfolio{
@@ -314,6 +349,7 @@ section#portfolio{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--color4);
 }
 section#portfolio h1{
     margin-top: 40px;
@@ -323,8 +359,6 @@ section#portfolio ul{
     margin-top: 40px;
     margin-bottom: 40px;
     width: 90%;
-    border: 1px solid black;
-    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -333,12 +367,14 @@ section#portfolio ul{
 section#portfolio ul li{
     width: 30%;
     height: fit-content;
-    border: .8px solid black;
     margin: 10px;
     transition: all .2s;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 section#portfolio ul li:hover{
-    transform: translateY(-4px)
+    transform: translateY(-4px);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 section#portfolio ul li a{
     text-decoration: none;
@@ -348,7 +384,10 @@ section#portfolio ul li a .pict{
     width: 95%;
     height: 150px;
     margin: 10px auto;
-    background-color: red;
+    box-sizing: border-box;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 150px;
 }
 section#portfolio ul li a .body-card{
     width: 90%;
@@ -385,6 +424,8 @@ section#form{
 #form p{
     font-size: 20px;
     padding-bottom: 40px;
+    width: 90%;
+    text-align: center;
 }
 #form .container-form{
     width: 70%;
@@ -393,10 +434,8 @@ section#form{
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
-/* #form .container-form form{
-    background-color: yellow;
-} */
 #form .container-form form{
     width: 50%;
 }
@@ -418,7 +457,7 @@ section#form{
   top: 0;
   left: 0;
   width: 100%;
-  color: #d3d3d3;
+  color: black;
   cursor: text;
   transition: all .5s;
 }
@@ -427,7 +466,7 @@ section#form{
   border: 0;
   outline: 0;
   padding: 0.5rem 0;
-  border-bottom: 2px solid #d3d3d3;
+  border-bottom: 2px solid black;
   box-shadow: none;
   color: #101010;
   background-color: var(--color4);
@@ -437,23 +476,104 @@ section#form{
 }
 #form .container-form form .input-field input:focus,
 #form .container-form form .input-field input:valid {
-  border-color: #00dd22;
+  border-color: var(--color1);
 }
 #form .container-form form .input-field input:focus~label,
 #form .container-form form .input-field input:valid~label {
   font-size: 14px;
   top: -24px;
-  color: #00dd22;
+  color: var(--color1);
+}
+#form .container-form button {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1.5em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#form .container-form button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+#form .container-form button img {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+  width: 25px;
+  filter: invert(1);
+}
+#form .container-form button:hover .svg-wrapper {
+  animation: fly 0.6s ease-in-out infinite alternate;
+}
+#form .container-form button:hover img {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+#form .container-form button:hover span {
+  transform: translateX(5em);
+}
+#form .container-form button:active {
+  transform: scale(0.95);
+}
+@keyframes fly {
+  from {
+    transform: translate(0.2em , 0.1em);
+  }
+
+  to {
+    transform: translate(0.2em , -0.1em);
+  }
+}
+/* section-footer */
+section#footer{
+    width: 100%;
+    height: 60vh;
+    background-color: var(--color4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section#footer .container{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: start;
+}
+section#footer h3{
+    width: 80%;
+    font-size: 25px;
+    padding-bottom: 35px;
+}
+section#footer .container ul li{
+    padding: 0px 100px 30px 0px;
+    font-size: 20px;
+    color: black;
+}
+section#footer .container ul li a{
+    text-decoration: none;
+    color: inherit;
 }
 /* footer */
 footer{
     position: relative;
     width: 100%;
-    height: 100vh;
-    background: #3586ff;
+    height: 150px;
+    /* background: #3586ff; */
+    background-color: var(--color4);
     overflow: hidden;
-  }
-  footer .air{
+}
+footer .air{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -461,35 +581,35 @@ footer{
     height: 100px;
     background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
     background-size: 1000px 100px
-  }
-  footer .air.air1{
+}
+footer .air.air1{
     animation: wave 30s linear infinite;
     z-index: 1000;
     opacity: 1;
     animation-delay: 0s;
     bottom: 0;
-  }
-  footer .air.air2{
+}
+footer .air.air2{
     animation: wave2 15s linear infinite;
     z-index: 999;
     opacity: 0.5;
     animation-delay: -5s;
     bottom: 10px;
-  }
-  footer .air.air3{
+}
+footer .air.air3{
     animation: wave 30s linear infinite;
     z-index: 998;
     opacity: 0.2;
     animation-delay: -2s;
     bottom: 15px;
-  }
-  footer .air.air4{
+}
+footer .air.air4{
     animation: wave2 5s linear infinite;
     z-index: 997;
     opacity: 0.7;
     animation-delay: -5s;
     bottom: 20px;
-  }
+}
 @keyframes wave{
     0%{
       background-position-x: 0px; 
@@ -513,25 +633,32 @@ footer .air.air1 center{
 
 
 /* breakpoint */
-@media only screen and (max-width: 480px){
-    /* header */
-    header .container-text{
-        width: 100%;
-        height: 49vh;
-    }
-    header .container-pict{
-        width: 100%;
-        height: 49vh;
-    }
+@media only screen and (max-width: 900px){
     /* about */
-    article#about .container .content{
-        width: 100%;
+    article#about .container .svg.one img{
+        width: 90%;
     }
-    article#about .container .svg{
-        display: none;
+    article#about .container .svg.two img{
+        width: 90%;
     }
 }
 @media only screen and (max-width: 768px){
+    /* header */
+    header{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    header .container-text{
+        width: 100%;
+        height: 30vh;
+        align-items: center;
+    }
+    header .container-pict{
+        width: 100%;
+        height: 25vh;
+        padding-top: 5vh;
+    }
      /* section */
      section#experience .content{
         width: 80%;
@@ -539,7 +666,44 @@ footer .air.air1 center{
     section#experience .svg{
         width: 100%;
     }
+    /* portfolio */
+    section#portfolio ul li{
+        width: 40%;
+    }
+    /* section-footer */
+    section#footer .container ul li{
+        padding-right: 60px;
+    }
 }
-@media only screen and (max-width: 900px){
-
+@media only screen and (max-width: 480px){
+    /* about */
+    article#about .container .content{
+        width: 100%;
+    }
+    article#about .container .svg{
+        display: none;
+    }
+    /* portfolio */
+    section#portfolio ul li{
+        width: 80%;
+    }
+    /* form */
+    #form .container-form{
+        flex-direction: column;
+        width: 70%;
+        justify-content: space-evenly;
+    }
+    #form .container-form form{
+        width: 100%;
+    }
+    #form .container-form form .input-field{
+        width: 100%;
+    }
+    #form .container-form form.text .input-field{
+        width: 100%;
+    }
+    /* section-footer */
+    section#footer .container ul{
+        width: 100%;
+    }
 }
