@@ -47,3 +47,10 @@ function show_alert() {
 showAlert.addEventListener('click' , function() {
     showAlert.classList.remove('click');
 });
+
+
+// loading
+const loading = document.querySelector('.container-loader');
+window.addEventListener('load', () => {
+    loading.classList.add('hidden');
+});

@@ -7,3 +7,9 @@ menuIcon.addEventListener('click' , function(e) {
     e.target.nextElementSibling.firstElementChild.classList.toggle('show');
     e.target.nextElementSibling.lastElementChild.classList.toggle('show');
 });
+
+// loading
+const loading = document.querySelector('.container-loader');
+window.addEventListener('load', () => {
+    loading.classList.add('hidden');
+});
