@@ -214,6 +214,28 @@ header .container-text h1{
     font-size: 55px;
     padding-bottom: 20px;
 }
+header .container-text h1 span {
+  color: #000000;
+  position: relative;
+  padding-left: 2px;
+}
+header .container-text h1 span::before {
+  content: "";
+  height: 50px;
+  width: 2px;
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  background: #000000;
+  transform: translateY(-45%);
+  animation: blink 0.9s infinite;
+}
+header .container-text h1 span.stop-blinking::before {
+  animation: none;
+}
+@keyframes blink {
+  50% { opacity: 0 }
+}
 header .container-text h4{
     font-size: 20px;
     width: 90%;
@@ -378,10 +400,8 @@ section#portfolio ul{
 }
 section#portfolio ul li{
     width: 30%;
-    height: fit-content;
     margin: 10px;
     transition: all .2s;
-    background-color: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 section#portfolio ul li:hover{
@@ -391,36 +411,85 @@ section#portfolio ul li:hover{
 section#portfolio ul li:active{
     transform: scale(0.95);
 }
-section#portfolio ul li a{
-    text-decoration: none;
+section#portfolio ul li .card{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+section#portfolio ul li .card img{
+  width: fit-content;
+  height: 90%;
+  transition: all .5s;
+}
+section#portfolio ul li .card__image {
+  width: 100%;
+  height: 100%;
+}
+section#portfolio ul li .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+section#portfolio ul li .card .card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+section#portfolio ul li .card:hover .card__content {
+  transform: rotateX(0deg);
+}
+section#portfolio ul li .card .card__title {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  font-weight: 700;
+  transform: translateY(-5px);
+}
+section#portfolio ul li .card:hover img {
+  scale: 0;
+}
+section#portfolio ul li .card .card__description {
+  margin: 5px 0 10px;
+  font-size: 14px;
+  color: black;
+  line-height: 1.2;
+  height: 50%;
+  overflow: auto;
+}
+section#portfolio ul li .card .card__button {
+  padding: 14px;
+  border-radius: 8px;
+  background: var(--color2);
+  border: none;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+section#portfolio ul li .card .secondary {
+  background: transparent;
+  color: var(--color2);
+  border: 1px solid var(--color2);
+}
+section#portfolio ul li .card .card__button:hover{
+    background-color: var(--color4);
     color: black;
-}
-section#portfolio ul li a .pict{
-    width: 95%;
-    height: 150px;
-    margin: 10px auto;
-    box-sizing: border-box;
-    border: 1px solid black;
-    text-align: center;
-    line-height: 150px;
-}
-section#portfolio ul li a .body-card{
-    width: 90%;
-    height: 60px;
-    margin: 10px auto;
-    /* background-color: green; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-overflow: ellipsis;
-}
-section#portfolio ul li a .body-card h4{
-    font-size: 20px;
-    margin: 5px 5px;
-}
-section#portfolio ul li a .body-card p{
-    font-size: 17px;
-    margin: 5px 5px;
+    border: 1px solid var(--color4);
 }
 /* form */
 section#form{
@@ -665,39 +734,6 @@ footer .air.air1 center{
     top: 70px;
 }
 
-
-
-/* loading */
-/* .loading-container{
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.loading-container .loading-animation{
-    width: 200px;
-    height: 200px;
-    box-sizing: border-box;
-    border-radius: 50%;
-    border-top: 8px solid green;
-    animation: loading .5s linear infinite;
-}
-@keyframes loading{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-.loading-container.hidden{
-    display: none;
-} */
 /* 3D tower loader made by: csozi | Website: www.csozi.hu*/
 .container-loader{
     width: 100%;
@@ -708,7 +744,7 @@ footer .air.air1 center{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 9999999;
     transition: all .8s;
 }
 .container-loader.hidden{
@@ -881,7 +917,7 @@ footer .air.air1 center{
         font-size: 35px;
     }
     section#portfolio ul li{
-        width: 80%;
+        width: 100%;
     }
     /* form */
     #form h1{
