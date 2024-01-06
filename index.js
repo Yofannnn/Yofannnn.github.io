@@ -1,12 +1,26 @@
 // click event btn menu
 const menuIcon = document.querySelector('nav .btn .menu-icon')
-menuIcon.addEventListener('click' , function(e) {
+document.addEventListener('click' , function(e) {
     e.target.firstElementChild.classList.toggle('show');
     e.target.lastElementChild.classList.toggle('show');
     e.target.nextElementSibling.classList.toggle('show');
     e.target.nextElementSibling.firstElementChild.classList.toggle('show');
     e.target.nextElementSibling.lastElementChild.classList.toggle('show');
+
+    // const box = document.querySelector('nav .btn .container');
+    // if ('click' !=== box) {
+    //     box.classList.toggle('show');
+    // };
 });
+// document.addEventListener('click', function handleClickOutsideBox(event) {
+//     const box = document.getElementById('box');
+  
+//     if (!box.contains(event.target)) {
+//       box.style.display = 'none';
+//     }
+//   });
+
+
 
 // animation typewriting
 const dynamicText = document.querySelector("header h1 span");
